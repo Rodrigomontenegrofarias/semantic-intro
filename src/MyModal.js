@@ -13,12 +13,8 @@ export default function MyModal(props){
 
 
     if (visible){
-        return ( <Modal
-            basic            
-            open={visible}
-            size='small'
-           
-          >
+        return ( <Modal basic            
+            open={visible}size='small'>
             <Header icon>
               <Icon name='archive' />
               Archive Old Messages

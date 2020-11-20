@@ -1,71 +1,96 @@
 
 import 'semantic-ui-css/semantic.min.css'
-import { Button, Icon, Label, Menu} from 'semantic-ui-react'
-import MyModal from './MyModal';
+
 import React from "react";
+import './App.css';
+import Nav from './Nav';
+//import Menu2 from './Menu2';
+
+import Formulario from './Formulario';
+import { Segment } from 'semantic-ui-react';
+
+import Fig from './Fig';
+import Fig1 from './Fig1';
+import Shop from './Shop';
+import Video from './Video';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Buton from './Buton';
 
 
 function App() {
 
-  var [openModal, setOpenModal] = React.useState(false);
-
-
-  console.log("modal state", openModal);
-  
   return (
-    <div className="App">
-       <Menu>
-        <Menu.Item
-          name='editorials'          
-          onClick={()=>console.log("click menu 1")}
-        >
-          Editorials
-        </Menu.Item>
+    <Router>
+      <div className="App">
+        
+        <header >
+            <div className="App-header1">
+                <div>
+                      <Nav/>
+                </div>
+                <div className="App-fig1">
+                      <Fig1/>
+                </div>
+                <div className="App-fig">
+                      <Fig/>
+                </div>
+            </div>        
+        </header>
+       <item> <Buton/>
+       </item>
+       <item> <Buton/>
+       </item>
+       <item> <Buton/>
+       </item>
+       
+        
 
-        <Menu.Item
-          name='reviews'
+        <body>
+            <Segment>
+              <div>
+                    
+                  <div>
+                    <div>
+                      <Switch>
+                         <Route path="/" exact component={Home}/> 
+                          <Route path="/Video" component={Video}/>
+                          <Route path="/Shop" component={Shop}/>
+                      </Switch>
+                    </div>
+                  </div> 
+              </div>
+              
+            </Segment> 
+        </body>
           
-          onClick={()=>console.log("click menu 2")}
-        >
-          Reviews
-        </Menu.Item>
-
-        <Menu.Item
-          name='upcomingEvents'          
-          onClick={()=>console.log("click menu 3")}
-        >
-          Upcoming Events
-        </Menu.Item>
-      </Menu>
-       <Button as='div' labelPosition='right' onClick={(e,d)=>setOpenModal(true)}>
-      <Button icon>
-        <Icon name='heart' />
-        Like
-      </Button>
-      <Label as='a' basic pointing='left'>
-        2,048
-      </Label>
-    </Button>
-    <Button as='div' labelPosition='left'>
-      <Label as='a' basic pointing='right'>
-        2,048
-      </Label>
-      <Button icon>
-        <Icon name='heart' />
-        Like
-      </Button>
-    </Button>
-    <Button as='div' labelPosition='left'>
-      <Label as='a' basic>
-        2,048
-      </Label>
-      <Button icon>
-        <Icon name='fork' />
-      </Button>
-    </Button>
-    <MyModal visible={openModal} onClose={()=>{console.log("close"); setOpenModal(false);}} />
-    </div>
+        
+        <footer>
+          <div className="App-Footer">
+              <div class="ui black vertical footer segment">
+                    <div class="ui center aligned container">
+                        <h4 class="ui inverted header">&copy; Copyright 2020 | All rights reserved | Rodrigo-Montenegro</h4>
+                        <a href="https://www.facebook.com/"><i class="facebook square icon big"></i></a>
+                        <a href="https://twitter.com/"><i class="twitter square icon big"></i></a>
+                        <a href="https://www.linkedin.com/company/c"><i class="linkedin square icon big"></i></a>
+                    </div>
+                </div>  
+          </div>
+        </footer>        
+      </div>
+    </Router>
+    
   );
 }
+const Home = () => (
+  
+  <div>
+      <h1>
+        Home Page
+      </h1>
+      <div className="App-Formulario">
+        <Formulario/>
+      </div>
+  </div>
+)
 
 export default App;
