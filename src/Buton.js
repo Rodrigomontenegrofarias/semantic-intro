@@ -16,8 +16,7 @@ const Buton = () => (
       <Button inverted color='yellow' href="/Video">
         Video
       </Button>
-      <Button inverted color='olive' href="/
-      ">
+      <Button inverted color='olive' href="/Shop">
         Shop
       </Button>
       
