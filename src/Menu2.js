@@ -25,6 +25,24 @@ export default class Menu2 extends Component {
                 
             </ul> 
             <ul className="nav-links">
+                <Link style={navStyle} to='/Perfil'>
+                    <li>
+                        Perfil
+                    </li>
+
+                </Link>
+                
+            </ul>
+            <ul className="nav-links">
+                <Link style={navStyle} to='/Formulario'>
+                    <li>
+                        Formulario
+                    </li>
+
+                </Link>
+                
+            </ul> 
+            <ul className="nav-links">
                 <Link style={navStyle} to='/video'>
                     <li>
                         Video

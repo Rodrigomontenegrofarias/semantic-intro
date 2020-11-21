@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 
 import 'semantic-ui-css/semantic.min.css'
 
@@ -6,15 +7,18 @@ import './App.css';
 import Nav from './Nav';
 //import Menu2 from './Menu2';
 
-import Formulario from './Formulario';
+import Formulario1 from './Formulario1';
 import { Segment } from 'semantic-ui-react';
-
-import Fig from './Fig';
-import Fig1 from './Fig1';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+//import Fig from './Fig';
+//import Fig1 from './Fig1';
 import Shop from './Shop';
 import Video from './Video';
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Buton from './Buton';
+
+import MiValidador from './MiValidador';
+import Miimagen from './Miimagen';
+import Perfil from './Perfil';
+//import Buton from './Buton';
 
 
 function App() {
@@ -28,31 +32,19 @@ function App() {
                 <div>
                       <Nav/>
                 </div>
-                <div className="App-fig1">
-                      <Fig1/>
-                </div>
-                <div className="App-fig">
-                      <Fig/>
-                </div>
+                
             </div>        
         </header>
-       <item> <Buton/>
-       </item>
-       <item> <Buton/>
-       </item>
-       <item> <Buton/>
-       </item>
-       
-        
-
+  
         <body>
             <Segment>
-              <div>
-                    
+              <div>  
                   <div>
                     <div>
                       <Switch>
-                         <Route path="/" exact component={Home}/> 
+                          <Route path="/" exact component={Home}/> 
+                          <Route path="/Perfil"  component={Perfil}/>
+                          <Route path="/Formulario"  component={Formulario1}/> 
                           <Route path="/Video" component={Video}/>
                           <Route path="/Shop" component={Shop}/>
                       </Switch>
@@ -85,11 +77,23 @@ const Home = () => (
   
   <div>
       <h1>
-        Home Page
+        Home Page Validacion
       </h1>
-      <div className="App-Formulario">
-        <Formulario/>
-      </div>
+      <p> clave de usuario : uvalpo     
+      </p>
+      <p1> 
+        <p>
+          ingresa tu rut
+        </p>
+        <MiValidador valor = ""/>
+      </p1>
+     
+      <Miimagen/>
+        
+      
+
+      
+      
   </div>
 )
 

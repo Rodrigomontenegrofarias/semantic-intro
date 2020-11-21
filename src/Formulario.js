@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Form } from 'semantic-ui-react'
 
 const options = [
-  { key: 'm', text: 'Male', value: 'male' },
-  { key: 'f', text: 'Female', value: 'female' },
-  { key: 'o', text: 'Other', value: 'other' },
+  { key: 'm', text: 'Mujer', value: 'male' },
+  { key: 'f', text: 'Hombre', value: 'female' },
+  { key: 'o', text: 'Otro', value: 'other' },
 ]
 
 class Formulario extends Component {
@@ -17,39 +17,39 @@ class Formulario extends Component {
     return (
       <Form>
         <Form.Group widths='equal'>
-          <Form.Input fluid label='First name' placeholder='First name' />
-          <Form.Input fluid label='Last name' placeholder='Last name' />
+          <Form.Input fluid label='Primer nombre' placeholder='First name' />
+          <Form.Input fluid label='Apellido' placeholder='Last name' />
           <Form.Select
             fluid
-            label='Gender'
+            label='Sexo'
             options={options}
             placeholder='Gender'
           />
         </Form.Group>
         <Form.Group inline>
-          <label>Size</label>
+          <label>Edad</label>
           <Form.Radio
-            label='Small'
+            label='Menor de edad,'
             value='sm'
             checked={value === 'sm'}
             onChange={this.handleChange}
           />
           <Form.Radio
-            label='Medium'
+            label='Mayor de edad.'
             value='md'
             checked={value === 'md'}
             onChange={this.handleChange}
           />
           <Form.Radio
-            label='Large'
+            label='Tercera edad.'
             value='lg'
             checked={value === 'lg'}
             onChange={this.handleChange}
           />
         </Form.Group>
-        <Form.TextArea label='About' placeholder='Tell us more about you...' />
-        <Form.Checkbox label='I agree to the Terms and Conditions' />
-        <Form.Button>Submit</Form.Button>
+        <Form.TextArea label='Especificacion' placeholder='...........' />
+        <Form.Checkbox label='Aceptas terminos y condiciones' />
+        <Form.Button>Aceptar</Form.Button>
       </Form>
     )
   }
